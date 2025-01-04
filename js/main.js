@@ -29,6 +29,8 @@ function getWeatherIcon(code) {
 		case 1282:
 			return "thunderstorm.svg";
 		case 1066:
+		case 1069:
+		case 1072:
 		case 1114:
 		case 1117:
 		case 1210:
@@ -37,27 +39,32 @@ function getWeatherIcon(code) {
 		case 1219:
 		case 1222:
 		case 1225:
+		case 1237:
 		case 1255:
 		case 1258:
+		case 1261:
+		case 1264:
+		case 1279:
+		case 1282:
 			return "snow.svg";
-		case 1063:
-		case 1180:
-		case 1183:
 		case 1186:
 		case 1189:
 		case 1192:
-		case 1195:
-		case 1240:
 		case 1243:
 		case 1246:
 		case 1273:
 		case 1276:
 			return "rain.svg";
-		case 1072:
+		case 1063:
+		case 1183:	
 		case 1150:
 		case 1153:
 		case 1168:
 		case 1171:
+		case 1180:
+		case 1198:
+		case 1201:
+		case 1240:
 			return "drizzle.svg";
 		case 1003:
 		case 1006:
@@ -121,7 +128,7 @@ async function updateWeatherInfo(city) {
 	const today = forecastday[0];
 	const nextDays = forecastday.slice(1);
 	const {
-		location: { name },
+		location: { name , country },
 		current: {
 			temp_c,
 			humidity,
@@ -130,7 +137,7 @@ async function updateWeatherInfo(city) {
 		},
 	} = weatherData;
 
-	countryName.textContent = name;
+	countryName.textContent = name + ", " + country;
 	countryTemp.textContent = Math.round(temp_c) + " °C";
 	countryCondition.textContent = text;
 	countryHumidityValue.textContent = humidity + " %";
