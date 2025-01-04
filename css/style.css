@@ -7,7 +7,7 @@
     font-weight: 600;
 }
 body {
-    background: url(/images/bg.jpg);
+    background: url(../images/bg.jpg);
     background-size: cover;
     background-position: center;
     background-position: 80%;
